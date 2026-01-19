@@ -1,4 +1,4 @@
-package com.example.plugin.listeners
+package org.orbis.industries.listeners
 
 import com.hypixel.hytale.server.core.Message
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent

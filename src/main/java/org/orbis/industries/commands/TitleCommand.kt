@@ -1,6 +1,6 @@
-package com.example.plugin.commands
+package org.orbis.industries.commands
 
-import com.example.plugin.utils.ServerUtil.executeWorld
+import org.orbis.industries.utils.ServerUtil.executeWorld
 import com.hypixel.hytale.server.core.Message
 import com.hypixel.hytale.server.core.command.system.CommandContext
 import com.hypixel.hytale.server.core.command.system.arguments.system.RequiredArg
@@ -26,7 +26,7 @@ class TitleCommand : CommandBase("example_title", "Show a title to all players",
         val title = ctx.get<String?>(this.titleArg) as String
         val subtitle = ctx.get<String?>(this.subtitleArg) as String
 
-        executeWorld(Runnable {
+        executeWorld {
             EventTitleUtil.showEventTitleToUniverse(
                 Message.raw(title),
                 Message.raw(subtitle),
@@ -36,6 +36,6 @@ class TitleCommand : CommandBase("example_title", "Show a title to all players",
                 1.5f,
                 1.5f
             )
-        })
+        }
     }
 }

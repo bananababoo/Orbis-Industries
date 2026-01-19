@@ -1,4 +1,4 @@
-package com.example.plugin.utils
+package org.orbis.industries.utils
 
 import com.hypixel.hytale.server.core.universe.Universe
 

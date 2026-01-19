@@ -1,21 +1,20 @@
-package com.example.plugin
+package org.orbis.industries
 
-import com.example.plugin.commands.CameraCommand
-import com.example.plugin.commands.ExampleCommand
-import com.example.plugin.commands.TitleCommand
-import com.example.plugin.listeners.PlayerChatListener
-import com.example.plugin.listeners.PlayerReadyListener
+import com.hypixel.hytale.component.system.EcsEvent
+import com.hypixel.hytale.server.core.event.events.ecs.UseBlockEvent
+import org.orbis.industries.commands.TitleCommand
+import org.orbis.industries.listeners.PlayerChatListener
+import org.orbis.industries.listeners.PlayerReadyListener
 import com.hypixel.hytale.server.core.event.events.player.PlayerChatEvent
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent
 import com.hypixel.hytale.server.core.plugin.JavaPlugin
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit
+import org.orbis.industries.systems.LockedDoorSystem
 import javax.annotation.Nonnull
 
-class ExamplePlugin(@Nonnull init: JavaPluginInit) : JavaPlugin(init) {
+class OrbisIndustries(@Nonnull init: JavaPluginInit) : JavaPlugin(init) {
     override fun setup() {
         // Commands
-        commandRegistry.registerCommand(CameraCommand())
-        commandRegistry.registerCommand(ExampleCommand())
         commandRegistry.registerCommand(TitleCommand())
 
         // Events
@@ -25,5 +24,7 @@ class ExamplePlugin(@Nonnull init: JavaPluginInit) : JavaPlugin(init) {
         eventRegistry.registerGlobal<String?, PlayerReadyEvent?>(
             PlayerReadyEvent::class.java
         ) { event: PlayerReadyEvent? -> PlayerReadyListener.onPlayerReady(event!!) }
+
+        entityStoreRegistry.registerSystem(LockedDoorSystem)
     }
 }

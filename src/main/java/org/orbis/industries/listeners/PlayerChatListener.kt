@@ -1,6 +1,6 @@
-package com.example.plugin.listeners
+package org.orbis.industries.listeners
 
-import com.example.plugin.chat.ChatMessageFormatter
+import org.orbis.industries.chat.ChatMessageFormatter
 import com.hypixel.hytale.server.core.event.events.player.PlayerChatEvent
 
 object PlayerChatListener {
