@@ -1,0 +1,11 @@
+{
+  "id": "orbisindustries",
+  "name": "Orbis Industries",
+  "version": "1.0.0",
+  "author": "bananababoo",
+  "description": "Monsters Industries in hytale",
+  "main": "org.orbis.industries.OrbisIndustries",
+  "dependencies": [
+    "Buuz135:MultipleHUD"
+  ]
+}

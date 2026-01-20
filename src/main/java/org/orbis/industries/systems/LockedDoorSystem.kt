@@ -24,10 +24,12 @@ object LockedDoorSystem : EntityEventSystem<EntityStore, UseBlockEvent.Pre>(UseB
         val player = store.getComponent(event.context.entity, Player.getComponentType())
 
         if(player != null && event.blockType.id.startsWith("*Door_Unlock")){
+
             val handItem = player.inventory.itemInHand
             val doorId = event.blockType.id.substringAfter("*Door_Unlock").substringBefore("_")
             player.sendMessage(event.blockType.id.message())
             val isOpen = event.blockType.id.substringAfter("State_Definitions_").substringBefore("Door") == "Open"
+
             if(handItem?.itemId?.equals("Door_Key$doorId") == true && !isOpen) {
                 player.sendMessage("You clicked a door! State: $isOpen".message())
                 val newItem = handItem.withQuantity(handItem.quantity - 1)

@@ -1,0 +1,48 @@
+$C = "../Common.ui";
+
+Group #BoardRoot {
+  LayoutMode: Top;
+  Anchor: (Width: 280, Height: 320, Right: 1, Top: 400);
+  Padding: (Left: 10, Right: 10, Top: 10, Bottom: 10);
+  Group #Header {
+    LayoutMode: Top;
+    Anchor: (Width: 260, Height: 90);
+    Padding: (Left: 4, Right: 4, Bottom: 8);
+    Label #BoardTitle {
+      Style: (FontSize: 16, RenderBold: true, TextColor: #f2f4f8, HorizontalAlignment: Center, VerticalAlignment: Center);
+      Anchor: (Width: 252, Height: 22, Top: 5);
+      Text: "Victory Points";
+    }
+  }
+  Group #Lines {
+    LayoutMode: Top;
+    Anchor: (Width: 260, Height: 180);
+    Padding: (Top: 6, Bottom: 4);
+    Group #Team1 {
+      LayoutMode: Left;
+      Background: #333333;
+      Label #Team1Text {
+        Style: (TextColor: #ffffff);
+        Anchor: (Width: 80);
+        Text: "Team 1:";
+      }
+      Label #Team1VictoryPoints {
+        Style: (TextColor: #ffffff);
+        Text: "";
+      }
+    }
+    Group #Team2 {
+      LayoutMode: Left;
+      Background: #333333;
+      Label #Team2Text {
+        Style: (TextColor: #ffffff);
+        Anchor: (Width: 80);
+        Text: "Team 2:";
+      }
+      Label #Team2VictoryPoints {
+        Style: (TextColor: #ffffff);
+        Text: "";
+      }
+    }
+  }
+}

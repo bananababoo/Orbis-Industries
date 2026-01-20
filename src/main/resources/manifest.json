@@ -1,19 +1,20 @@
 {
-  "Group": "org.orbis",
+  "Group": "Bananababoo",
   "Name": "OrbisIndustries",
   "Version": "1.0.0",
   "Description": "Your plugin description here.",
   "Authors": [
     {
-      "Name": "Your Name",
-      "Email": "your.email@example.com",
+      "Name": "bananababoo",
+      "Email": "banababnana@gmail.com",
       "Url": "https://example.com"
     }
   ],
-  "Website": "https://example.com",
+  "Website": "",
   "ServerVersion": "*",
-  "Dependencies": {},
-  "OptionalDependencies": {},
+  "Dependencies": {
+    "Buuz135:MultipleHUD": "*"
+  },
   "DisabledByDefault": false,
   "Main": "org.orbis.industries.OrbisIndustries",
   "IncludesAssetPack": true

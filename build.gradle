@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm'
+    id 'com.gradleup.shadow' version '8.3.5'
 }
 
 group = 'org.orbis'
@@ -11,9 +12,11 @@ repositories {
     flatDir {
         dirs 'libraries'
     }
-    maven{
-        url 'https://maven.hytale-modding.info/'
+    maven {
+        name = "hMReleases"
+        url = uri("https://maven.hytale-modding.info/releases")
     }
+
 }
 
 java {
@@ -35,7 +38,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:2.3.0" //"org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
-    implementation("com.buuz135:MultipleHUD:1.0.2")
+    implementation "com.buuz135:MultipleHUD:1.0.2"
 }
 
 jar {
